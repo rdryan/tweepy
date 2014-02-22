@@ -297,9 +297,10 @@ class Stream(object):
         self.url = '/%s/statuses/filter.json' % STREAM_VERSION
         if follow:
             encoded_follow = [s.encode(encoding) for s in follow]
-            self.session.params['follow'] = ','.join(map(str, follow))
+            self.session.params['follow'] = ','.join(encoded_follow)
         if track:
-            self.session.params['track'] = ','.join(map(str, track))
+            encoded_track = [s.encode(encoding) for s in track]
+            self.session.params['track'] = ','.join(encoded_track)
         if locations and len(locations) > 0:
             assert len(locations) % 4 == 0
             self.session.params['locations'] = ','.join(['%.2f' % l for l in locations])
