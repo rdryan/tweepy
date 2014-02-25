@@ -158,6 +158,7 @@ def bind_api(**config):
                 time.sleep(self.retry_delay)
                 retries_performed += 1
 
+            self.session = requests.Session()
             # If an error was returned, throw an exception
             self.api.last_response = resp
             if resp.status_code and not 200 <= resp.status_code < 300:
