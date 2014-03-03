@@ -18,7 +18,7 @@ class API(object):
             host='api.twitter.com', search_host='search.twitter.com',
              cache=None, secure=True, api_root='/1.1', search_root='',
             retry_count=0, retry_delay=0, retry_errors=None, timeout=60,
-            parser=None, compression=False):
+            parser=None, compression=False, proxy_url=None):
         self.auth = auth_handler
         self.host = host
         self.search_host = search_host
