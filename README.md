@@ -12,9 +12,10 @@ is by using pip/easy_install to pull it from PyPI:
     pip install tweepy
 
 You may also use Git to clone the repository from
-Github and install it manually:
+Github and install it manually, this repository is
+forked for the main tweepy, add a proxy_url.
 
-    git clone https://github.com/tweepy/tweepy.git
+    git clone https://github.com/rdryan/tweepy.git
     python setup.py install
 
 **Note** only Python 2.6 and 2.7 are supported at
@@ -30,4 +31,5 @@ Community
 ---------
   - [Google Group/Mailing list](http://groups.google.com/group/tweepy)
   - IRC Chat (Freenode.net #tweepy)
+  - Add dedicated proxy_url in tweepy/binder.py, need to be updated
 
