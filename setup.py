@@ -12,4 +12,4 @@ setup(name="tweepy",
       url="http://github.com/tweepy/tweepy",
       packages=find_packages(exclude=['tests']),
       keywords="twitter library",
-      zip_safe=True)
+      zip_safe=False)

@@ -7,6 +7,7 @@ import urllib
 import urllib2
 import time
 import re
+import os
 from StringIO import StringIO
 import gzip
 
@@ -37,7 +38,7 @@ def bind_api(**config):
                 raise TweepError('Authentication required!')
 
             self.api = api
-            self.api.proxy_url = "127.0.0.1:8087"
+            self.api.proxy_url = os.environ.get('http_proxy')
             self.post_data = kargs.pop('post_data', None)
             self.retry_count = kargs.pop('retry_count', api.retry_count)
             self.retry_delay = kargs.pop('retry_delay', api.retry_delay)
@@ -158,8 +159,7 @@ def bind_api(**config):
                     req.get_method = lambda: self.method
 
                     if self.api.proxy_url:
-                        proxy = urllib2.ProxyHandler({'http': 'http://%s/' % self.api.proxy_url, 'https': 'https://%s/' % self.api.proxy_url})
-                        print self.api.proxy_url
+                        proxy = urllib2.ProxyHandler({'http': '%s' % self.api.proxy_url, 'https': '%s' % self.api.proxy_url})
                         opener = urllib2.build_opener(proxy)
                         resp = opener.open(req)
                     else:
