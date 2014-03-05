@@ -35,4 +35,11 @@ Community
 Usage
 ---------
   - Add proxy support. Read environment variable 'http_proxy' for proxy directly.
+    for Windows:
+    set http_proxy=http://your.proxy.host:port
 
+    for Linux csh:
+    setenv http_proxy http://your.proxy.host:port
+
+    for Linx bash:
+    export http_proxy="http://your.proxy.host:port"
