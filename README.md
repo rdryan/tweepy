@@ -31,5 +31,8 @@ Community
 ---------
   - [Google Group/Mailing list](http://groups.google.com/group/tweepy)
   - IRC Chat (Freenode.net #tweepy)
-  - Add dedicated proxy_url in tweepy/binder.py, need to be updated
+
+Usage
+---------
+  - Add proxy support. Read environment variable 'http_proxy' for proxy directly.
 
